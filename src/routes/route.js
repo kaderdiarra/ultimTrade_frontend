@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const axiosInstance = axios.create({ baseURL: 'http://localhost:5000', withCredentials: true })
+const axiosInstance = axios.create({ baseURL: 'malik-lbssociety-lbs-mirror-test.zeet.app', withCredentials: true })
 
 /**
  * @summary User routes
