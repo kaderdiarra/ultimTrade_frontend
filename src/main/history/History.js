@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core'
-import { AiOutlineHistory, AiOutlineClear } from 'react-icons/ai'
+import { AiOutlineClear } from 'react-icons/ai'
 
 import { getHistoryAsync, clearHistory } from '../../redux/history'
 import { clearHistoryReq } from '../../routes/route'

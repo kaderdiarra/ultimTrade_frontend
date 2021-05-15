@@ -8,7 +8,6 @@ import { MONTHS } from '../../constant/constants'
 
 import HistoryCardDialog from './HistoryCardDialog'
 import { deleteHistory } from '../../redux/history'
-import { deleteHistoryReq } from '../../routes/route'
 
 const useStyles = makeStyles({
     root: {

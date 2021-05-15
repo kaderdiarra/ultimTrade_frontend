@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormControl, FormHelperText, TextField, InputAdornment } from '@material-ui/core'
+import { TextField, InputAdornment } from '@material-ui/core'
 
 import { AMOUNT_TYPE } from '../../constant/constants'
 

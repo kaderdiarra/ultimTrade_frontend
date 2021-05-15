@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import PropTyes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Switch from '@material-ui/core/Switch'
 
-import { selectUser, unselectUser, setCheckAllUsers } from '../../../redux/selectedUsersSlice'
+import { selectUser, unselectUser } from '../../../redux/selectedUsersSlice'
 
 function SelectUser({ userId, checkAllUsers , }) {
     const dispatch = useDispatch()
-    const selectedUsers = useSelector((state) => state.selectedUsers)
     const [state, setState] = useState(false)
 
     useEffect(() => {

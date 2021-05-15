@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
+import { Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
 
 import Controls from '../../components/controls/Controls'
 import HistoryRecapTable from './HistoryRecapTable'

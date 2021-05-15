@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Select as MuiSelect} from '@material-ui/core'
-import { makeStyles, FormControl, MenuItem, InputLabel } from '@material-ui/core'
+import { makeStyles, FormControl, MenuItem } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
