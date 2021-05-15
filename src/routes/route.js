@@ -1,35 +1,35 @@
-const axios = require('axios')
+import axios from 'axios'
 
-const axiosInstance = axios.create({ baseURL: 'https://malik-lbssociety-lbs-mirror-test.zeet.app', withCredentials: true })
+//const axiosInstance = axios.create({ baseURL: 'http://localhost:3000', /*withCredentials: true */})
 
 /**
  * @summary User routes
  */
 
-export const getUsersReq = () => axiosInstance.get('client/')
-export const deleteUserReq = (id) => axiosInstance.delete(`client/delete/${id}`)
-export const createUserReq = (payload) => axiosInstance.post('client/create/', {...payload})
-export const searchClientReq = (toSearch) => axiosInstance.get('client/search', { params: {toSearch} })
-export const updateUserReq = (_id, payload) => axiosInstance.patch(`client/update/${_id}`, {...payload})
+export const getUsersReq = () => axios.get('/client')
+export const deleteUserReq = (id) => axios.delete(`/client/delete/${id}`)
+export const createUserReq = (payload) => axios.post('/client/create', {...payload})
+export const searchClientReq = (toSearch) => axios.get('/client/search', { params: {toSearch} })
+export const updateUserReq = (_id, payload) => axios.patch(`/client/update/${_id}`, {...payload})
 
 /**
  * @summary History routes
  */
 
-export const getHistoryReq = () => axiosInstance.get('history/')
-export const deleteHistoryReq = (_id) => axiosInstance.delete(`history/delete/${_id}`)
-export const clearHistoryReq = () => axiosInstance.delete('history/clearHistory')
+export const getHistoryReq = () => axios.get('/history')
+export const deleteHistoryReq = (_id) => axios.delete(`/history/delete/${_id}`)
+export const clearHistoryReq = () => axios.delete('/history/clearHistory')
 
 /**
  * @summary Account routes
  */
 
-export const accountLoginReq = (payload) => axiosInstance.post('user/login', {...payload})
-export const verifyTokenReq = () => axiosInstance.get('user/verifyToken')
+export const accountLoginReq = (payload) => axios.post('/user/login', {...payload})
+export const verifyTokenReq = () => axios.get('/user/verifyToken')
 
 
 /**
  * @summary Trading routes
  */
 
-export const tradingOrderReq = (payload) => axiosInstance.post('trade/', {...payload})
+export const tradingOrderReq = (payload) => axios.post('/trade', {...payload})

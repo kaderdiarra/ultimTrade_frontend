@@ -2,6 +2,8 @@ export const SYMBOLS = [
     'BTCUSDT',
     'ZECUSDT',
     'HIVEUSDT',
+    'ICXUSDT',
+    'COTIUSDT',
 ]
 
 export const TYPES = [

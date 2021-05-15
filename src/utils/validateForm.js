@@ -56,7 +56,7 @@ export const valideAmount = (amount, type) => {
     if (type === AMOUNT_TYPE.PERCENTAGE || nbr >= 10)
         return ''
     if (nbr < 10)
-        return 'Amount must be greater or equal to 10 USDT'
+        return 'Empty'
     return 'Invalid amount'
 }
 

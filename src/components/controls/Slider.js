@@ -45,7 +45,7 @@ function Slider({setValues, values, ...other}) {
                 valueLabelDisplay="auto"
                 step={5}
                 marks
-                min={5}
+                min={0}
                 max={100}
                 {...other}
             />
