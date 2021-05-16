@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const getClients = async () => {
       try {
-        const result = await axios.get('/client')
+        const result = await axios.get('/client/')
         console.log("CLIENTS: ", result.data)
       } catch (error) {
         console.log("ERROR")
