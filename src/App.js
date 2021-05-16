@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
-
 import Home from './Home'
 import Login from './authentification/Login'
 
+axios.defaults.proxy = 'https://malik-lbssociety-lbssociety-mirror-backend.zeet.app'
 // https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
 function App() {
 
   const handleClick = async () => {
     try {
-      const result = await axios.get('https://malik-lbssociety-lbssociety-frontend.zeet.app/client')
+      const result = await axios.get('/client')
       console.log("CLIENTS: ", result.data)
     } catch (error) {
       console.log("ERROR")
