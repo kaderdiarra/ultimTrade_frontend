@@ -42,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://malik-lbssociety-lbssociety-mirror-backend.zeet.app"
+  "proxy": "https://malik-lbssociety-lbssociety-mirror-backend.zeet.app:5000"
 }
