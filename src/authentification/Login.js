@@ -40,10 +40,10 @@ function Login() {
         if (!validate())
             return
         try {
-            document.cookie = ''
-            const result = await accountLoginReq({ email: values.email, password: values.password, })
-            console.log('login res: ', result.data)
-            dispatch(accountLogin({ user: result.data.user, token: result.data.token }))
+            //document.cookie = ''
+            //const result = await accountLoginReq({ email: values.email, password: values.password, })
+            //console.log('login res: ', result.data)
+            //dispatch(accountLogin({ user: result.data.user, token: result.data.token }))
             history.push('/')
         } catch (error) {
             console.log(error)
