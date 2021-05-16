@@ -4,7 +4,8 @@ import axios from 'axios'
 import Home from './Home'
 import Login from './authentification/Login'
 
-axios.defaults.proxy = 'https://malik-lbssociety-lbssociety-mirror-backend.zeet.app'
+axios.defaults.proxy.host = 'https://malik-lbssociety-lbssociety-mirror-backend.zeet.app'
+//axios.defaults.proxy.
 // https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
 function App() {
 
