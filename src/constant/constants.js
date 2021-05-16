@@ -4,6 +4,7 @@ export const SYMBOLS = [
     'HIVEUSDT',
     'ICXUSDT',
     'COTIUSDT',
+    'NEOUSDT',
 ]
 
 export const TYPES = [
