@@ -4,11 +4,11 @@ import axios from 'axios'
 import Home from './Home'
 import Login from './authentification/Login'
 
-axios.defaults.proxy.protocol = 'https'
-axios.defaults.proxy.host = 'malik-lbssociety-lbssociety-mirror-backend.zeet.app'
 // https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
 function App() {
 
+  axios.defaults.proxy.protocol = 'https'
+  axios.defaults.proxy.host = 'malik-lbssociety-lbssociety-mirror-backend.zeet.app'
   const handleClick = async () => {
     try {
       const result = await axios.get('/client')
