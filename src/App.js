@@ -8,21 +8,18 @@ import Login from './authentification/Login'
 // https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
 function App() {
 
-  useEffect(() => {
-    const getClients = async () => {
-      try {
-        const result = await axios.get('https://malik-lbssociety-lbssociety-frontend.zeet.app/client')
-        console.log("CLIENTS: ", result.data)
-      } catch (error) {
-        console.log("ERROR")
-      }
+  const handleClick = async () => {
+    try {
+      const result = await axios.get('https://malik-lbssociety-lbssociety-frontend.zeet.app/client')
+      console.log("CLIENTS: ", result.data)
+    } catch (error) {
+      console.log("ERROR")
     }
-    getClients()
-  }, [])
+  }
 
   return (
     <div className="App">
-      HELLO
+      <button onClick={handleClick}>HELLO</button>
       {/*<Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
