@@ -2,6 +2,14 @@ import axios from 'axios'
 
 const axiosInstance = axios.create({ baseURL: 'https://malik-lbssociety-lbssociety-mirror-backend.zeet.app',})
 
+axiosInstance.interceptors.request.use((req) => {
+    const token = window.localStorage.getItem('token')
+    if (token) {
+        req.headers.authorization = `Bearer ${token}`
+    }
+    return req
+})
+
 /**
  * @summary User routes
  */

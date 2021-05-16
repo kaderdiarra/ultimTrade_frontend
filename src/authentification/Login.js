@@ -9,6 +9,7 @@ import Controls from '../components/controls/Controls'
 import { useForm, Form } from '../components/useForm'
 import {valideEmail, validePassword} from '../utils/validateForm'
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
+import { verifyTokenReq } from '../routes/route'
 
 const useStyles = makeStyles({
     paper: {
@@ -40,11 +41,12 @@ function Login() {
         if (!validate())
             return
         try {
-            //document.cookie = ''
-            //const result = await accountLoginReq({ email: values.email, password: values.password, })
-            //console.log('login res: ', result.data)
-            //dispatch(accountLogin({ user: result.data.user, token: result.data.token }))
-            history.push('/')
+            window.localStorage.removeItem('token')
+            const result = await accountLoginReq({ email: values.email, password: values.password, })
+            dispatch(accountLogin({ user: result.data.user, token: result.data.token }))
+            const verif = await verifyTokenReq()
+            if (verif)
+                history.push('/')
         } catch (error) {
             console.log(error)
             // redirect to login page
