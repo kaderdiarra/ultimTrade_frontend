@@ -25,9 +25,7 @@ const useStyles = makeStyles({
 
 async function searchUsers (value, dispatch) {
     try {
-        console.log('query og:', value)
         const result = await searchClientReq(value)
-        console.log('result: ', result.data)
         dispatch(addUsers(result.data))
     } catch (error) {
         console.log(error)

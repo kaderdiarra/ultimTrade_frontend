@@ -54,7 +54,6 @@ function HistoryCard({ history }) {
     };
 
     const handleRemoveHistory = async (_id) => {
-        console.log('history id: ', _id)
         try {
             const result = await deleteHistoryReq(_id)
             if (result.data)

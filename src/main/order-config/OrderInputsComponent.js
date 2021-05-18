@@ -49,7 +49,6 @@ function OrderInputsComponent({ handleInputChange, values, setValues, errorAmoun
                 >
                     {
                         [...SYMBOLS].map((item, index) => {
-                            console.log('ITEM:', item)
                               return <MenuItem key={`key-${item.base}-${index}`} id={`select-${item.base}`} value={item}>{`${item.base}${item.quote}`}</MenuItem>
                         })
                     }

@@ -19,7 +19,6 @@ function SelectUser({ userId, checkAllUsers , }) {
     const handleSwitchChange = (e) => {
         const value = e.target.checked
 
-        console.log('value:', value)
         if (checkAllUsers) {
             setState(true)
             return

@@ -23,14 +23,11 @@ function EditUserInfo({ user }) {
         e.preventDefault()
         // if success send snackbar
         if (!validate('edit')) {
-            console.log('invalid form')
+            console.log('Invalid form')
             return
         }
         try {
             const newValue = compareOldAndNewValues(user, values, ['_id'])
-            console.log("user: ", user)
-            console.log("values: ", values)
-            console.log("newValues: ", newValue)
             const result = await updateUserReq(newValue._id, {
                 firstName: newValue.firstName,
                 lastName: newValue.lastName,

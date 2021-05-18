@@ -28,7 +28,7 @@ function OrderConfigContent() {
     const handleSubmit = async (e, validate, values) => {
         e.preventDefault()
         if (!validate()) {
-            console.log('ERROR')
+            console.log('FORM ERROR')
             return
         }
         try {
@@ -43,12 +43,10 @@ function OrderConfigContent() {
                 amountType: values.amountType,
             })
             console.log(result.data)
-            console.log('SUCESS')
             // dispatch to history
             dispatch(getHistoryAsync())
         } catch (error) {
             console.log(error)
-            console.log('ERROR CATCH')
         }
     }
 
@@ -63,7 +61,6 @@ function OrderConfigContent() {
         return (Object.values(temp).every(elem => elem === ""))
     }
 
-    console.log('amount type:', values.amountType)
     return (
         <Paper className={classes.root}>
             <Form onSubmit={(e) => handleSubmit(e, validate, values)} className={classes.form} >

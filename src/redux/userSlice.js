@@ -7,7 +7,6 @@ export const getUsersAsync = createAsyncThunk(
     async () => {
         try {
             const response = await getUsersReq()
-            console.log('users test: ', response)
             return { users: response.data } // payload
         } catch (error) {
             console.log(error)
