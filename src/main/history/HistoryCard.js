@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { Card, IconButton, Chip, makeStyles } from '@material-ui/core'
 import { HiOutlineTrash } from 'react-icons/hi'
@@ -8,6 +7,7 @@ import { MONTHS } from '../../constant/constants'
 
 import HistoryCardDialog from './HistoryCardDialog'
 import { deleteHistory } from '../../redux/history'
+import { deleteHistoryReq } from '../../routes/route'
 
 const useStyles = makeStyles({
     root: {
@@ -56,7 +56,7 @@ function HistoryCard({ history }) {
     const handleRemoveHistory = async (_id) => {
         console.log('history id: ', _id)
         try {
-            const result = await axios.delete(`history/delete/${_id}`)//deleteHistoryReq(_id)
+            const result = await deleteHistoryReq(_id)
             if (result.data)
                 dispatch(deleteHistory({_id}))
         } catch (error) {

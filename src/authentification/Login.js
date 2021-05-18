@@ -49,7 +49,6 @@ function Login() {
                 history.push('/')
         } catch (error) {
             console.log(error)
-            // redirect to login page
         }
     }
 

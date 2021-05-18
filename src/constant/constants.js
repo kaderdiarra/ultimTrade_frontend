@@ -1,10 +1,34 @@
 export const SYMBOLS = [
-    'BTCUSDT',
-    'ZECUSDT',
-    'HIVEUSDT',
-    'ICXUSDT',
-    'COTIUSDT',
-    'NEOUSDT',
+    {
+        base: 'BTC',
+        quote: 'USDT',
+        name: 'BTCUSDT',
+    },
+    {
+        base: 'ZEC',
+        quote: 'USDT',
+        name: 'ZECUSDT',
+    },
+    {
+        base: 'HIVE',
+        quote: 'USDT',
+        name: 'HIVEUSDT',
+    },
+    {
+        base: 'ICX',
+        quote: 'USDT',
+        name: 'ICXUSDT',
+    },
+    {
+        base: 'COTI',
+        quote: 'USDT',
+        name: 'COTIUSDT',
+    },
+    {
+        base: 'NEO',
+        quote: 'USDT',
+        name: 'NEOUSDT',
+    },
 ]
 
 export const TYPES = [

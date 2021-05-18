@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Select as MuiSelect} from '@material-ui/core'
-import { makeStyles, FormControl, MenuItem } from '@material-ui/core'
+import { makeStyles, FormControl } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }))
 
 
-function Select({ items, selectTitle=null, onChange, value, ...other}) {
+function Select({ selectTitle=null, onChange, children, value, ...other}) {
     const classes = useStyles();
 
     return (
@@ -27,21 +27,16 @@ function Select({ items, selectTitle=null, onChange, value, ...other}) {
             label={selectTitle}
             {...other}
           >
-              {
-                  items.map((item, index) => {
-                      return <MenuItem key={`key-${item}-${index}`} id={`select-${item}`} value={item}>{item}</MenuItem>
-                  })
-              }
+              {children}
           </MuiSelect>
       </FormControl>
     )
 }
 
 Select.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.string).isRequired,
-    selectTitle: PropTypes.string,
-    value: PropTypes.string,
-    onChange: PropTypes.func,
+    selectTitle: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default Select

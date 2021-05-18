@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Typography} from '@material-ui/core'
+import { makeStyles, Typography, MenuItem } from '@material-ui/core'
 
 import Controls from '../../components/controls/Controls'
 import { SYMBOLS, TYPES } from '../../constant/constants'
@@ -41,24 +41,35 @@ function OrderInputsComponent({ handleInputChange, values, setValues, errorAmoun
                 <Typography className={classes.title}>Trading Pair :</Typography>
                 <Controls.Select
                     //className={classes.inputsComponent}
-                    items={[...SYMBOLS]}
                     selectTitle="Pair"
                     onChange={handleInputChange}
                     name="symbol"
                     value={values.symbol}
                     className={classes.selectPaire}
-                />
+                >
+                    {
+                        [...SYMBOLS].map((item, index) => {
+                            console.log('ITEM:', item)
+                              return <MenuItem key={`key-${item.base}-${index}`} id={`select-${item.base}`} value={item}>{`${item.base}${item.quote}`}</MenuItem>
+                        })
+                    }
+                </Controls.Select>
             </div>
             <div className={classes.inputsContainer}>
                 <Typography className={classes.title}>Types :</Typography>
                 <Controls.Select
-                    items={[...TYPES]}
                     selectTitle="Type"
                     onChange={handleInputChange}
                     name="type"
                     value={values.type}
                     className={classes.selectTypes}
-                />
+                >
+                    {
+                        [...TYPES].map((item, index) => {
+                            return <MenuItem key={`key-${item}-${index}`} id={`select-${item}`} value={item}>{item}</MenuItem>
+                        })
+                    }
+                </Controls.Select>
             </div>
             <div className={classes.inputsContainer}>
                 <Typography className={classes.title}>Amount :</Typography>
