@@ -34,6 +34,11 @@ export const SYMBOLS = [
         quote: 'USDT',
         name: 'DIAUSDT',
     },
+    {
+        base: 'XLM',
+        quote: 'USDT',
+        name: 'XLMUSDT',
+    }
 ]
 
 export const TYPES = [
