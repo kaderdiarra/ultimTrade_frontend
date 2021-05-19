@@ -29,6 +29,11 @@ export const SYMBOLS = [
         quote: 'USDT',
         name: 'NEOUSDT',
     },
+    {
+        base: 'DIA',
+        quote: 'USDT',
+        name: 'DIAUSDT',
+    },
 ]
 
 export const TYPES = [
