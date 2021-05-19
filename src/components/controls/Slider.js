@@ -1,5 +1,5 @@
 import React from 'react'
-import { Slider as MuiSlider, Typography, makeStyles} from '@material-ui/core'
+import { Slider as MuiSlider, Typography, makeStyles, Input } from '@material-ui/core'
 
 import { AMOUNT_TYPE } from '../../constant/constants'
 
@@ -31,24 +31,47 @@ function Slider({setValues, values, ...other}) {
         }))
     }
 
+    const handleInputChange = (event) => {
+        setValues(prev => ({
+            ...prev,
+            amountPercentage: event.target.value === '' ? '' : Number(event.target.value),
+            amount: '',
+            amountType: AMOUNT_TYPE.PERCENTAGE
+        }))
+    }
+
     const classes = useStyles()
     return (
         <div className={classes.container}>
-            <Typography className={classes.title} id="discrete-slider" gutterBottom>
+            <Typography className={classes.title} id="input-slider" gutterBottom>
                 percentage value :
             </Typography>
             <MuiSlider
                 className={classes.slider}
                 value={values.amountPercentage}
                 onChange={handleChange}
-                aria-labelledby="discrete-slider"
+                aria-labelledby="input-slider"
                 valueLabelDisplay="auto"
-                step={5}
-                marks
+                //step={5}
+                //marks
                 min={0}
                 max={100}
                 {...other}
             />
+            {/*<Input
+                //className={classes.input}
+                value={values.amountPercentage}
+                margin="dense"
+                onChange={handleInputChange}
+                //onBlur={handleBlur}
+                inputProps={{
+                  step: 10,
+                  min: 0,
+                  max: 100,
+                  type: 'number',
+                  'aria-labelledby': 'input-slider',
+                }}
+            />*/}
         </div>
     )
 }

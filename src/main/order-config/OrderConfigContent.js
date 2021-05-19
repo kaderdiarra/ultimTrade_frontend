@@ -10,6 +10,7 @@ import SideButton from './SideButton'
 import { Form, useForm } from '../../components/useForm'
 import { valideSymbol, valideSide, valideAmount, valideType } from '../../utils/validateForm'
 import OrderInputsComponent from './OrderInputsComponent'
+import SubmitTradeButton from './SubmitTradeButton'
 import { useStyles } from './style'
 
 function OrderConfigContent() {
@@ -63,7 +64,7 @@ function OrderConfigContent() {
 
     return (
         <Paper className={classes.root}>
-            <Form onSubmit={(e) => handleSubmit(e, validate, values)} className={classes.form} >
+            <Form onSubmit={(e) => handleSubmit(e, validate, values)} className={classes.form} id="order-configuration-form" >
                 <SideButton
                     value={values.side}
                     onClick={(e) => {
@@ -83,10 +84,8 @@ function OrderConfigContent() {
                     setValues={setValues}
                     values={values}
                 />
-                <Controls.Button
-                    text="TRADE"
-                    type="submit"
-                    className={classes.tradeButton}
+                <SubmitTradeButton
+                    buttonStyle={classes.tradeButton}
                 />
             </Form>
         </Paper>
