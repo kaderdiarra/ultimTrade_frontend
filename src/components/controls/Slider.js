@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     slider: {
         maxWidth: '58%',
         paddingRight: 20,
-        marginRight: 30,
+        marginRight: 5,
     },
     input: {
         width: 42,

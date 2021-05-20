@@ -37,7 +37,7 @@ export const sideButtonStyle = {
 export const useStyles = makeStyles({
     root: {
         backgroundColor: '#FFFFFF',
-        width: '85%',
+        width: '95%',
         height: '85%',
         margin: '0 auto',
         position: 'relative',
