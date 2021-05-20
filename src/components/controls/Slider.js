@@ -47,13 +47,13 @@ function Slider({setValues, values, ...other}) {
     const handleInputChange = (event) => {
         setValues(prev => ({
             ...prev,
-            amountPercentage: event.target.value === '' ? 0 : Number(event.target.value),
+            amountPercentage: event.target.value === '' ? '' : Number(event.target.value),
             amount: '',
             amountType: AMOUNT_TYPE.PERCENTAGE
         }))
     }
 
-    const handleBlur = () => {
+    const handleBlur = (event) => {
         if (values.amountPercentage < 0) {
           setValues(prev => ({
             ...prev,
@@ -63,6 +63,11 @@ function Slider({setValues, values, ...other}) {
             setValues(prev => ({
                 ...prev,
                 amountPercentage: 100,
+            }))
+        } else {
+            setValues(prev => ({
+                ...prev,
+                amountPercentage: event.target.value === '' ? 0 : Number(event.target.value),
             }))
         }
     }
@@ -75,7 +80,7 @@ function Slider({setValues, values, ...other}) {
             </Typography>
             <MuiSlider
                 className={classes.slider}
-                value={values.amountPercentage}
+                value={typeof values.amountPercentage === 'number' ? values.amountPercentage : 0}
                 onChange={handleChange}
                 aria-labelledby="input-slider"
                 valueLabelDisplay="auto"

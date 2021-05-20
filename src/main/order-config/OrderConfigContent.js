@@ -62,6 +62,7 @@ function OrderConfigContent() {
         return (Object.values(temp).every(elem => elem === ""))
     }
 
+    console.log('amount type:', values.amountType)
     return (
         <Paper className={classes.root}>
             <Form onSubmit={(e) => handleSubmit(e, validate, values)} className={classes.form} id="order-configuration-form" >
