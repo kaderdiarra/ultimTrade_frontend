@@ -17,8 +17,21 @@ const useStyles = makeStyles({
     },
     slider: {
         maxWidth: '58%',
-        paddingRight: 20
-    }
+        paddingRight: 20,
+        marginRight: 30,
+    },
+    input: {
+        width: 42,
+        '&:before': {
+            borderBottom: 'none',
+        },
+        '&:after': {
+            borderBottom: 'none',
+        },
+        '&:hover:not(.Mui-disabled):before': {
+            borderBottom: 'none',
+        }
+    },
 })
 
 function Slider({setValues, values, ...other}) {
@@ -34,10 +47,24 @@ function Slider({setValues, values, ...other}) {
     const handleInputChange = (event) => {
         setValues(prev => ({
             ...prev,
-            amountPercentage: event.target.value === '' ? '' : Number(event.target.value),
+            amountPercentage: event.target.value === '' ? 0 : Number(event.target.value),
             amount: '',
             amountType: AMOUNT_TYPE.PERCENTAGE
         }))
+    }
+
+    const handleBlur = () => {
+        if (values.amountPercentage < 0) {
+          setValues(prev => ({
+            ...prev,
+            amountPercentage: 0,
+        }))
+        } else if (values.amountPercentage > 100) {
+            setValues(prev => ({
+                ...prev,
+                amountPercentage: 100,
+            }))
+        }
     }
 
     const classes = useStyles()
@@ -52,26 +79,23 @@ function Slider({setValues, values, ...other}) {
                 onChange={handleChange}
                 aria-labelledby="input-slider"
                 valueLabelDisplay="auto"
-                //step={5}
-                //marks
                 min={0}
                 max={100}
                 {...other}
             />
-            {/*<Input
-                //className={classes.input}
+            <Input
+                className={classes.input}
                 value={values.amountPercentage}
                 margin="dense"
                 onChange={handleInputChange}
-                //onBlur={handleBlur}
+                onBlur={handleBlur}
                 inputProps={{
-                  step: 10,
                   min: 0,
                   max: 100,
                   type: 'number',
                   'aria-labelledby': 'input-slider',
                 }}
-            />*/}
+            />
         </div>
     )
 }
