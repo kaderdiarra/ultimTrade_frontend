@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { Card, IconButton, Chip, makeStyles } from '@material-ui/core'
 import { HiOutlineTrash } from 'react-icons/hi'
-import { MONTHS } from '../../constant/constants'
+import { MONTHS } from '../../constant'
 
 import HistoryCardDialog from './HistoryCardDialog'
 import { deleteHistory } from '../../redux/history'

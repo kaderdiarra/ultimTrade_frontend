@@ -4,7 +4,7 @@ import { Paper } from '@material-ui/core'
 
 import { getHistoryAsync } from '../../redux/history'
 import { tradingOrderReq } from '../../routes/route'
-import { AMOUNT_TYPE } from '../../constant/constants'
+import { AMOUNT_TYPE } from '../../constant'
 import Controls from '../../components/controls/Controls'
 import SideButton from './SideButton'
 import { Form, useForm } from '../../components/useForm'
@@ -27,6 +27,7 @@ function OrderConfigContent() {
     })
 
     const handleSubmit = async (e, validate, values) => {
+        console.log('values:', values)
         e.preventDefault()
         if (!validate()) {
             console.log('FORM ERROR')

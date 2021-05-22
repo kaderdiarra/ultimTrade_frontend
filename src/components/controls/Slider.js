@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slider as MuiSlider, Typography, makeStyles, Input } from '@material-ui/core'
 
-import { AMOUNT_TYPE } from '../../constant/constants'
+import { AMOUNT_TYPE } from '../../constant'
 
 const useStyles = makeStyles({
     container: {

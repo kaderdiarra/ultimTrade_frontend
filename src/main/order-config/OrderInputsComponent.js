@@ -1,8 +1,8 @@
 import React from 'react'
-import { makeStyles, Typography, MenuItem } from '@material-ui/core'
+import { makeStyles, Typography, MenuItem, Select, TextField } from '@material-ui/core'
 
 import Controls from '../../components/controls/Controls'
-import { SYMBOLS, TYPES } from '../../constant/constants'
+import { SYMBOLS, TYPES } from '../../constant'
 
 const useStyles = makeStyles({
     inputsContainer: {
@@ -39,20 +39,7 @@ function OrderInputsComponent({ handleInputChange, values, setValues, errorAmoun
         <>
             <div className={classes.inputsContainer}>
                 <Typography className={classes.title}>Trading Pair :</Typography>
-                <Controls.Select
-                    //className={classes.inputsComponent}
-                    selectTitle="Pair"
-                    onChange={handleInputChange}
-                    name="symbol"
-                    value={values.symbol}
-                    className={classes.selectPaire}
-                >
-                    {
-                        [...SYMBOLS].map((item, index) => {
-                              return <MenuItem key={`key-${item.base}-${index}`} id={`select-${item.base}`} value={item}>{`${item.base}${item.quote}`}</MenuItem>
-                        })
-                    }
-                </Controls.Select>
+                <Controls.SearchableSelect options={[...SYMBOLS]} setValues={setValues} />
             </div>
             <div className={classes.inputsContainer}>
                 <Typography className={classes.title}>Types :</Typography>

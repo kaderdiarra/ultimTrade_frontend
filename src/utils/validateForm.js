@@ -1,4 +1,4 @@
-const { SYMBOLS, TYPES, AMOUNT_TYPE } = require("../constant/constants")
+const { SYMBOLS, TYPES, AMOUNT_TYPE } = require("../constant")
 
 export const valideNames = (value, type) => {
     const size = value.length
@@ -40,7 +40,7 @@ export const validePassword = (value) => {
 }
 
 export const valideSymbol = (symbol) => {
-    if (SYMBOLS.includes(symbol))
+    if (SYMBOLS.some((item) => item.name === symbol.name))
         return ''
     return 'Invalid pair'
 }

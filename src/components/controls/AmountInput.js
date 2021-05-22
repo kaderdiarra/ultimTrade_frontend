@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { TextField, InputAdornment } from '@material-ui/core'
 
-import { AMOUNT_TYPE } from '../../constant/constants'
+import { AMOUNT_TYPE } from '../../constant'
 
 function AmountInput({ name, values, setValues, error=null, ...other }) {
   const handleChange = (e) => {

@@ -5,6 +5,7 @@ import Slider from './Slider'
 import DialogForm from './DialogForm'
 import AmountInput from './AmountInput'
 import ComponentHeader from './ComponentHeader'
+import SearchableSelect from './SearchableSelect'
 
 const Controls = {
     Input,
@@ -14,6 +15,7 @@ const Controls = {
     DialogForm,
     AmountInput,
     ComponentHeader,
+    SearchableSelect,
 }
 
 export default Controls
