@@ -8,10 +8,11 @@ import Login from './authentification/Login'
 function App() {
   return (
     <div className="App">
-      <Switch>
+      {/*<Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
-      </Switch>
+      </Switch>*/}
+      Hello World
     </div>
   );
 }

@@ -18,7 +18,7 @@ function Main() {
 
     return (
         <div className={classes.root} >
-            <Grid container spacing={8}>
+            {/*<Grid container spacing={8}>
 
                 <Grid item xs={12} sm={12} md={12} lg={5}>
                     <UserList />
@@ -33,7 +33,7 @@ function Main() {
                     <History />
                 </Grid>
 
-            </Grid>
+            </Grid>*/}
         </div>
     )
 }
