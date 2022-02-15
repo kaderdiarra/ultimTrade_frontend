@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+/*import React, { useState } from 'react'
 import { accountLoginReq } from '../routes/route'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -120,6 +120,29 @@ function Login() {
                 </Form>
             </Paper>
         </Container>
+    )
+}
+
+export default Login
+*/
+
+import React from 'react'
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import LargeScreenLogin from './LargeScreenLogin';
+import SmallScreenLogin from './SmallScreenLogin';
+
+
+function Login() {
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    console.log('matches: ', matches)
+    return (
+        <div>
+            {
+                matches ? <LargeScreenLogin /> : <SmallScreenLogin />
+            }
+        </div>
     )
 }
 
